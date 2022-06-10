@@ -1,25 +1,38 @@
-{
-    "root": true,
-    "env": {
-      "node": true,
-      "browser": true,
-      "es6": true
-    },  
-    "globals": {
-      "grid": true        
+module.exports = {
+    'env': {
+        'browser': true,
+        'commonjs': true,
+        'es2021': true,
+        'node': true
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
+    'extends': 'eslint:recommended',
+    'parserOptions': {
+        'ecmaVersion': 'latest'
     },
-    "rules": {
-      "quotes": [2, "single", { "avoidEscape": true }],
-      "indent" : ["warn",4],
-      "semi" :["error","always"],    
-      "no-var": "error",
-      "camelcase" :"warn"      
+    'rules': {
+        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',          
+        'quotes': [2, 'single', { 'avoidEscape': true }],
+        'indent' : ['warn', 4],
+        'semi' :['warn','always'],    
+        'no-var': 'error',
+        'camelcase' :'off',
+        'no-trailing-spaces': ['off', { 'skipBlankLines': true , 'ignoreComments': false}],
+        'space-before-function-paren': ['error', 'never'],
+        'space-before-blocks': ['off', 'always'],
+        'spaced-comment' :'off',
+        'keyword-spacing':[2, {'overrides': {
+            'if': {'after': false},
+            'for': {'after': false},
+            'while': {'after': false}
+        }}],
+        'padded-blocks': ['error', 'never'],
+        'no-unused-vars':'off',
+        'arrow-spacing':'off',
+        'object-curly-spacing':'off',
+        'eol-last':['off', 'always'],
+        'one-var':'off',
+        'comma-dangle':'off',
+        'no-useless-catch' : 'Off'
     }
-}
+};
